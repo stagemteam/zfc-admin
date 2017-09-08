@@ -1,0 +1,26 @@
+{
+  "name": "popov/zfc-layout",
+  "description": "ZF2 layout module",
+  "type": "zf-module",
+  "license": "MIT",
+  "keywords": [
+    "zf2",
+    "layout managment"
+  ],
+  "authors": [
+    {
+      "name": "Serhii Popov",
+      "email": "popow.sergiy@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Popov\\ZfcLayout\\": "src/"
+    }
+  }
+}
