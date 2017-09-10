@@ -1,0 +1,29 @@
+// reset style preloader
+.loadmask{
+	bottom: 0;
+	right: 0;
+	position: fixed;
+}
+.loadmask-msg{
+	border: none;
+	background: none;
+	padding: 0;
+	top: 0 !important;
+	left: 0 !important;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+.loadmask-msg div{
+	background: url('images/load-mask-wait.gif');
+	padding: 0;
+	border: none;
+	color: transparent;
+	width: 182px;
+	height: 180px;
+	position: absolute;
+	top: 50%;
+	margin-top: -90px;
+	left: 50%;
+	margin-left: -91px;
+}

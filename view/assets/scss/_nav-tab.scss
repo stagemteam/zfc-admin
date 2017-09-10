@@ -1,0 +1,59 @@
+@import "custom-variables";
+/*TABS STYLE*/
+.nav-tabs{
+  padding: 0 30px;
+  border-bottom: 2px solid $generalColorBg;
+  margin: 0 -15px 0 -30px;
+    & > li{
+      margin: 0;
+      & > a{
+        background: $tabBg;
+        color: $tabColor;
+        font-family: 'roboto_condensedregular';
+        border-color: $tabBorderColor;
+        border-bottom-color: transparent;
+        min-width: 80px;
+        padding: 8px 10px;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 0.85em;
+          &:hover{
+            background: $tabBgActive;
+            color: $tabColorActive;
+            border-color: $tabBgActive;
+          }
+      }
+      &.active{
+        & > a{
+          background: $tabBgActive;
+          color: $tabColorActive;
+          border-color: $tabBgActive;
+            &:hover, &:focus{
+              background: $tabBgActive;
+              color: $tabColorActive;
+              border-color: $tabBgActive;
+            }
+        }
+      }
+    }
+}
+
+.tab-pane{
+  & > div{
+    // margin-left: 15px !important;
+  }
+
+  .btn-group{
+    // padding: 30px 0;
+    .btn{
+      & + .btn{
+        margin-left: 15px;
+      }
+      & + .dropdown-toggle{
+        margin-left: -2px;
+      }  
+    }
+  }
+}

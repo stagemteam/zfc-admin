@@ -1,0 +1,682 @@
+@import "custom-variables";
+
+/*SIDEBAR MENU CLOSE STYLE START*/
+.wrapper{
+	&.menu-close{
+		.sidebar{
+			left: -253px;
+		}
+		.content{
+			padding-left: 0;
+		}
+		.content-body{
+			padding-left: 0;
+		}
+		.nav-tabs{
+			padding: 0 15px;
+		}
+		.breadcrumb, .product-view{
+			padding-left: 0;
+		}
+	}
+}
+
+/*SIDEBAR MENU CLOSE STYLE END*/
+
+/*HEADER STYLE START*/
+header{
+	height: $headerHeight;
+	background: $headerBg;
+		.navbar-brand{
+			font-family: 'roboto_condensedregular';
+			font-size: 1.7em;
+		    background: $navbarBrandBg;
+		    color: $navbarBrandColor;
+		    width: $navbarBrandWidth;
+		    	&:hover{
+		    		background: $navbarBrandHoverBg;
+		    	}
+		    	& > span{
+		    		font-weight: bold;
+		    	}
+		}
+		.sidebar-toggle{
+			height: 100%;
+			cursor: pointer;
+			padding: 20px 19px;
+			width: 50px;
+			height: $headerHeight;
+			line-height: 0;
+				span{
+					display: inline-block;
+					background: #fff;
+					width: 100%;
+					height: 2px;
+					vertical-align: middle;
+						& + span{
+							margin-top: 2px;
+						}
+				}
+				&:hover{
+					background: $navbarBrandBg;
+				}
+		}
+		.user-profile{
+			padding: 5px 15px 5px 0;
+				.user-logo{
+					width: 40px;
+					height: 40px;
+					border: 1px solid #c0c0c0;
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					border-radius: 50%;
+						img{
+							border-radius: 50%;
+						}
+				}
+				.user-name{
+					display: inline-block;
+					vertical-align: middle;
+					color: #fff;
+					margin-right: 31px;
+						span{
+							font-size: 0.8em;
+						}
+				}
+				.logout-btn{
+					display: inline-block;
+					vertical-align: middle;
+					width: 24px;
+					height: 24px;
+					border-radius: 50%;
+					background: $navbarBrandBg;
+					text-align: center;
+					
+						&:hover{
+							background: $navbarBrandHoverBg;
+						}
+						span{
+							color: #fff;
+							line-height: 22px;
+						}
+				}
+		}
+}
+/*HEADER STYLE END*/
+
+/*MAIN STYLE START*/
+main{
+	padding-top: $headerHeight;
+		.sidebar{
+			width: $sidebarWidth;
+			background: $sidebarBg;
+			height: 100vh;
+			position: fixed;
+			top: $headerHeight;
+			left: 0;
+			-webkit-transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+		    -o-transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+		    transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+				ul{
+					li{
+						border-bottom: 1px solid #16293a;
+						position: relative;
+							&.staff-ic{
+								a{
+									&:before{
+										background-position: -20px 0px;
+									}
+									&:hover:before{
+										background-position: -20px -21px;
+									}
+								}
+								
+							}
+							&.call-center-ic{
+								a{
+									&:before{
+										background-position: -40px 0px;
+									}
+									&:hover:before{
+										background-position: -40px -21px;
+									}
+								}
+									
+							}
+							&.shop-promotional-products-ic{
+								a{
+									&:before{
+										background-position: -60px 0px;
+									}
+									&:hover:before{
+										background-position: -60px -21px;
+									}
+								}
+								
+								
+							}
+							&.shop-spares-ic{
+								a{
+									&:before{
+										background-position: -80px 0px;
+									}
+									&:hover:before{
+										background-position: -80px -21px;
+									}
+								}
+							}
+							&.documents-ic{
+								a{
+									&:before{
+										background-position: -100px 0px;
+									}
+									&:hover:before{
+										background-position: -100px -21px;
+									}
+								}
+							}
+							&.warranty-ic{
+								a{
+									&:before{
+										background-position: -120px 0px;
+									}
+									&:hover:before{
+										background-position: -120px -21px;
+									}
+								}
+								
+							}
+							&.logistics-ic{
+								a{
+									&:before{
+										background-position: -140px 0px;
+									}
+									&:hover:before{
+										background-position: -140px -21px;
+									}
+								}
+								
+								
+							}
+							&.soft-loans-ic{
+								a{
+									&:before{
+										background-position: -180px 0px;
+									}
+									&:hover:before{
+										background-position: -180px -21px;
+									}
+								}
+								
+								
+							}
+							&.settings-ic{
+								a{
+									&:before{
+										background-position: -260px 0px;
+									}
+									&:hover:before{
+										background-position: -260px -21px;
+									}
+								}
+								
+								
+							}
+							&.discount-ic{
+								a{
+									&:before{
+										background-position: -199px 0px;
+									}
+									&:hover:before{
+										background-position: -199px -21px;
+									}
+								}
+								
+								
+							}
+							&.spare-ic{
+								a{
+									&:before{
+										background-position: -217px 0px;
+									}
+									&:hover:before{
+										background-position: -217px -21px;
+									}
+								}
+								
+								
+							}
+							a{
+								display: block;
+								color: #FFF;
+								padding: 18px 0 18px 40px;
+								position: relative;
+								&:hover{
+									color: #ffeb7c;
+									background: #0a1826;
+								}
+								&:before{
+									content: "";
+									position: absolute;
+									width: 20px;
+									height: 20px;
+									left: 10px;
+									top: 50%;
+									margin-top: -10px;
+									background: url(images/icons.png) no-repeat;
+									-webkit-transition: background-position .3s linear;
+									-o-transition: background-position .3s linear;
+									transition: background-position .3s linear;
+
+								}
+								&:hover:before{
+									background-position: 0px -21px;
+								}
+								
+								
+							}
+							&.active{
+									a{
+										color: #ffeb7c;
+										background: #0a1826;
+										&:before{
+											background-position: 0px -21px;
+										}
+									}
+									&.staff-ic{
+										a{
+											&:before{
+												background-position: -20px -21px;
+											}
+										}
+										
+									}
+									&.call-center-ic{
+										a{
+											&:before{
+												background-position: -40px -21px;
+											}
+										}
+											
+									}
+									&.shop-promotional-products-ic{
+										a{
+											&:before{
+												background-position: -60px -21px;
+											}
+										}
+										
+										
+									}
+									&.shop-spares-ic{
+										a{
+											&:before{
+												background-position: -80px -21px;
+											}
+										}
+									}
+									&.documents-ic{
+										a{
+											&:before{
+												background-position: -100px -21px;
+											}
+										}
+									}
+									&.warranty-ic{
+										a{
+											&:before{
+												background-position: -120px -21px;
+											}
+										}
+										
+									}
+									&.logistics-ic{
+										a{
+											&:before{
+												background-position: -140px -21px;
+											}
+										}
+										
+										
+									}
+									&.soft-loans-ic{
+										a{
+											&:before{
+												background-position: -180px -21px;
+											}
+										}
+										
+										
+									}
+									&.settings-ic{
+										a{
+											&:before{
+												background-position: -160px -21px;
+											}
+										}
+										
+										
+									}
+									&.discount-ic{
+										a{
+											&:before{
+												background-position: -200px -21px;
+											}
+										}
+										
+										
+									}
+									&.spare-ic{
+										a{
+											&:before{
+												background-position: -217px -21px;
+											}
+										}
+										
+										
+									}
+
+								}
+				
+							.label{
+								position: absolute;
+								right: -2px;
+								top: 50%;
+								margin-top: -7px;
+								font-size: 0.7em;
+							}
+					}
+				}
+		}
+}
+
+/*NOTIFICATION STYLE START*/
+.label{
+	line-height: 14px;
+	min-width: 23px;
+	padding: 0;
+	text-align: center;
+	font-size: 1em;
+	font-family: 'roboto_condensedregular';
+	border-radius: 2px 0 0 2px;
+	padding: 0 2px;
+		&.label-warning{
+			background: $labelNotificationBg;
+		}
+}
+/*NOTIFICATION STYLE END*/
+
+/*GENERAL CONTENT STYLE START*/
+.content{
+	width: 100%;
+	padding-left: $sidebarWidth;
+	background: $contentBg;
+	-webkit-transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+    -o-transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+    transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+
+    	.tab-pane{
+    		padding-top: 30px;
+    	}
+    	.content-body{
+    		padding-left: 15px;
+    	}
+}
+.breadcrumb{
+	background: transparent;
+	border-radius: 4px;
+	padding: 14px 15px;
+	margin-bottom: 0;
+		li{
+			font-size: 1em;
+			font-family: 'roboto_condensedregular';
+			a{
+				color: $breadcrumbLinkColor;
+				vertical-align: middle;
+					&:hover{
+						text-decoration: underline;
+					}
+			}
+			&.active{
+				color: $breadcrumbLinkColorActive;
+			}
+			& + li{
+
+				&:before{
+					content: "\003e";
+					vertical-align: top;
+					color: $breadcrumbLinkColorActive;
+				}
+			}
+		}
+}
+/*GENERAL CONTENT STYLE END*/
+
+/*MAIN STYLE END*/
+
+.ui-jqdialog-titlebar-close{
+	span.glyphicon-remove-circle{
+		font-size: 1.3em;
+	}
+}
+.ui-jqdialog{
+	.ui-jqdialog-title{
+		margin: 0;
+    	line-height: 35px;	
+	}
+} 
+.ui-jqdialog-content{
+	padding-left: 6px !important;
+	.DelTable{
+		tr{
+			td{
+				// font-size: 1.4em;
+			}
+		}
+	}
+	.fm-button{
+		font-size: 12px;
+	}
+	
+}
+.ui-state-error{
+	padding: 5px;
+}
+.fm-button-icon-left{
+	span{
+		margin-left: 5px;
+	}
+}
+
+
+.user-info-wrap{
+	padding: 30px 0 55px 0;
+	.user-info{
+		font-family: 'roboto_condensedregular';
+			h4{
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 30px;
+			}
+	}
+	.user-add{
+		span{
+			font-size: 1em;
+			color: $breadcrumbLinkColor;
+			display: inline-block;
+			padding: 20px 15px 0 15px;
+		}
+	}
+	.information-block{
+		padding-top: 15px;
+		.ui-state-default{
+			border: none;
+			overflow: hidden;
+				& + .ui-state-default{
+					margin-top: 15px;
+				}
+		}
+		.block-info{
+			background: $blockInfoBg;
+			padding: 7px 15px;
+			min-height: 55px;
+    		overflow: hidden;
+    			.staff-label{
+    				display: block;
+    			}
+				h6, .staff-label{
+					color: $generalGreyColor;
+					font-size: 0.8em;
+					font-family: 'roboto_condensedregular';
+					text-transform: uppercase;
+				}
+				span, .staff-title{
+					color: $generalBlueColor;
+					text-transform: uppercase;
+					height: 28px;
+					display: inline-block;
+					overflow: hidden;
+				}
+				&.total-price{
+					background: $generalBlueBg;
+					height: 55px;
+						&:before{
+							content: "";
+							display: inline-block;
+							height: 100%;
+							vertical-align: middle;
+							margin-left: -5px;
+						}
+						&.staff-prime-container{
+							height: 125px;
+							.staff-label{
+								color: #fff;
+    							font-size: 1.15em;
+    							margin-bottom: 5px;
+							}
+							.staff-price, .staff-currency{
+								font-size: 1.3em;
+								color: #fff;
+							}
+							.staff-price{
+								display: inline-block;
+							}
+						}
+						h6{
+							color: #fff;
+							display: inline-block;
+							vertical-align: middle;
+							margin-right: 10px;
+								& > span{
+									font-size: 11px;
+									height: auto;
+								}
+						}
+						span{
+							color: #fff;
+							font-size: 1.3em;
+							vertical-align: middle;
+							height: auto;
+						}
+				}
+		}
+		.btn.full-width{
+			padding: 19px 12px;
+    		line-height: 1;
+		}
+	}
+	.form-group{
+		width: 100%;
+		label{
+			width: 100%;
+				& span{
+					margin-bottom: 13px;
+				}
+		}
+	}
+	.checkbox{
+		margin-top: 29px;
+	}
+	.delivery-info{
+		padding-top: 30px;
+	}
+	.payment-info{
+		padding-top: 30px;
+			.checkbox{
+				margin-top: 37px;
+					label{
+						min-height: auto;
+					}
+			}
+	}
+	.summary-price{
+		padding-top: 30px;
+			.btn-group{
+				padding: 0;
+				margin-top: 29px;
+					.btn{
+						& + .btn{
+							margin-left: 30px;
+						}
+					}
+			}
+	}
+	.price-summary{
+		label{
+			font-size: 1.15em;
+			margin-bottom: 13px;
+		}
+	}
+	.comment{
+		padding-top: 30px;
+			span{
+				float: left;
+				width: 30%;
+			}
+			textarea{
+				min-height: 111px;
+				width: 75%;
+			}
+	}
+	.manual-discount {
+		label {
+			span{
+				text-transform: none;
+			}
+		}
+	}
+}
+
+.image-middle{
+	// position: fixed;
+ //    z-index: 99;
+ //    top: 150px;
+ //    left: 50%;
+ //    width: 500px;
+ //    margin-left: -250px;
+ 	display: none !important;
+}
+._bg-for-img{
+	img{
+		width: 500px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 150px;
+	}
+}
+// datapicer
+
+.ui-datepicker .ui-datepicker-title select{
+	font-size: 0.8em;
+}
+#form-period{
+	input[type="date"]{
+		width: 22%;
+	}
+}
+input.barcode-search{
+	width: 322px;
+}
+/*MEDIA STYLE*/
+@import "media";

@@ -1,0 +1,446 @@
+@import "custom-variables";
+
+/* GENERAL TABLE STYLE START*/
+table, .table, .table-striped{
+	font-size: 1em;
+
+}
+
+// .jqgrid-table-wrap{
+// 	padding-left: 15px;
+// }
+.ui-jqgrid{
+	width: 100% !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: none !important;
+	margin-top: 30px;
+		.ui-jqgrid-titlebar{
+			display: none;
+		}
+		.ui-search-table{
+			height: 100%;
+		}
+		.ui-jqgrid-view{
+			width: 100% !important;
+		}
+		.ui-jqgrid-pager{
+			width: 100% !important;
+			background: $tableThBg;
+				.ui-pg-table{
+					padding: 0;
+					td{
+						padding: 0;
+						font-size: 0.92em;
+						
+						&[id$="_right"]{
+							padding-right: 10px;
+						}
+						&[id$="_pager"]{
+							padding-left: 10px;
+							padding-right: 10px;
+							border: none;
+							box-shadow: none;
+							text-align: center;
+						}
+
+						&[id^="input"]{
+							white-space: nowrap;
+							box-shadow: -1px 0 0 #e9eaec inset,
+										1px 0 0 #e9eaec inset;
+    						border-right: 1px solid #d0d3d9;
+    						border-left: 1px solid #d0d3d9;
+						}
+						&[id$="_center"]{
+							td{
+								&[class$="-disabled"]{
+									border: none;
+									box-shadow: none;
+								}
+							}
+							.ui-pg-input{
+								margin: 0 7px;
+								border: 2px solid #e6e9ea;
+					    		font-size: 0.8em;
+					    			&:focus{
+					    				border-color: #66afe9;
+    									outline: 0;
+					    			}
+							}
+							
+						}
+					}
+				}
+				.ui-pager-control{
+					height: 38px;
+					border-bottom: 2px solid $tableThBorderColor;
+				}
+				/*.ui-paging-info{
+					display: none;
+				}*/
+				.ui-pg-div{
+					width: 51px;
+						span.ui-icon{
+							float: none;
+							margin: 0 auto;
+							background: url(images/sprite-icon.png);
+							cursor: pointer;
+								&.ui-icon-plus{
+									width: 15px;
+									height: 15px;
+									background-position: 0 -48px;
+								}
+								&.ui-icon-pencil{
+									width: 16px;
+									height: 16px;
+									background-position: 0 -32px;
+								}
+								&.ui-icon-trash{
+									width: 15px;
+									height: 17px;
+									background-position: 0 -63px;
+								}
+						}
+				}
+				.ui-pg-button{
+					cursor: default;
+					box-shadow: -1px 0 0 #e9eaec inset;
+					border-right: 1px solid #d0d3d9;
+					text-align: center;
+					.ui-pg-div{
+						span{
+							float: none;
+						}
+					}
+						
+				}
+
+				// скрыл три иконки которых нет на макет
+				.ui-state-disabled, #search_crud, #refresh_crud, #pcrud_center{
+					display: none;
+				}
+		}
+		
+		.ui-jqgrid-toppager{
+			.ui-pg-input{
+				@extend .ui-pg-input;
+			}
+		} 
+		.ui-jqgrid-resize-ltr{
+			display: none;
+		}
+		.ui-jqgrid-hdiv{
+			width: 100% !important;
+			border: none !important;
+			padding: 0;
+		}
+		.ui-jqgrid-bdiv{
+			width: 100% !important;
+		}
+		.ui-jqgrid-sortable{
+			
+		}
+		.ui-jqgrid-htable{
+			width: 100% !important;
+			tr{
+				th{
+					&[id^="inFact_"]{
+						vertical-align: bottom;	
+						&[id*="quantity"], &[id*="total"]{
+							color: $generalBlueColor;
+						}
+						div{
+							height: auto;
+							-ms-max-height: 20%;
+							-webkit-writing-mode: vertical-rl;
+							-ms-writing-mode: vertical-rl;
+							writing-mode: vertical-rl;
+							-webkit-transform: rotate(180deg);
+							-moz-transform: rotate(180deg);
+							-ms-transform: rotate(180deg);
+							-o-transform: rotate(180deg);
+							transform: rotate(180deg);
+						}
+						&:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+							vertical-align: middle;	
+							div{
+								-webkit-writing-mode: horizontal-tb;
+								-ms-writing-mode: horizontal-tb;
+								writing-mode: horizontal-tb;
+								-webkit-transform: rotate(0deg);
+								-moz-transform: rotate(0deg);
+								-ms-transform: rotate(0deg);
+								-o-transform: rotate(0deg);
+								transform: rotate(0deg);
+							}
+							
+						}
+					}
+
+				}
+			}
+			
+			.ui-th-column{
+				
+				background: $tableThBg;
+				border-right: 1px solid #d0d3d9;
+				box-shadow: -1px 0 0 #e9eaec inset;
+				text-align: left;
+				border-bottom: 2px solid $tableThBorderColor;
+				padding-left: 15px;
+				height: 38px;
+				font-size: 0.92em;
+				color: $tableThColor;
+				vertical-align: middle;
+					&.active, &:hover{
+						background: $tableThHoverBg;
+					}
+					div{
+						margin: 0;
+						font-weight: bold;
+						height: 18px;
+						line-height: 18px;
+					}
+
+			}
+		}
+		.ui-jqgrid-btable{
+			width: 100% !important;
+			tbody{
+				tr{
+					&.jqgrow{
+						td{
+							white-space: normal;
+						}
+					}
+				}
+			}
+		}
+		.table-bordered{
+			border-right: 0px none !important;
+		}
+		.ui-jqgrid-hbox{
+			padding: 0 !important;
+		}
+		.ui-widget-content{
+			border: none;
+			border-bottom: 1px solid #e0e2e5;
+			background: $tableTRBg;
+			color: $tablTdColor;
+		}
+		.ui-jqgrid-titlebar-close{
+			margin: -10px 10px 0 0;
+			padding: 0;
+			border: 1px solid transparent;
+		}
+		tr{
+			&.ui-row-ltr{
+				td{
+					border-right: none;
+					height: 39px;
+					font-size: 0.92em;
+					font-family: 'roboto_condensedregular';
+					padding-left: 15px;
+					text-align: left !important;
+					color: $tablTdColor;
+					vertical-align: middle;
+						&:first-child{
+							padding-left: 0;
+							text-align: center !important;
+
+						}
+						&[aria-describedby$="_image"]{
+							text-align: center !important;
+							padding-left: 0;
+						}
+						&[aria-describedby$="_edit"], &[aria-describedby$="_view"]{
+							background: $tableThBg;
+							text-align: center !important;
+							padding-left: 0;
+						}
+						&[aria-describedby$="_barcode"], &[aria-describedby$="_view"],
+						&[aria-describedby$="_cart"], &[aria-describedby$="_edit"]{
+							border-left: 1px solid $tableThBorderColor !important;
+						}
+						&[aria-describedby$="_grid_cart"]{
+							white-space: nowrap !important;
+						}
+
+						.camera-icon{
+							background: url('images/table-sprite.png') no-repeat;
+							display: inline-block;
+							background-position: -0px -29px; 
+							width: 16px;
+							height: 12px;
+						}
+						.pencil-edit-icon{
+							@extend .camera-icon;
+							background-position: -0px -0px;
+							width: 16px; 
+							height: 16px;
+						}
+						.paper-icon{
+							@extend .camera-icon;
+							background-position: -0px -53px;
+							width: 12px; 
+							height: 16px;
+						}
+
+						&[aria-describedby$="_code"]{
+							a{
+								color: $generalBlueBg;
+								text-decoration: underline;
+							}
+						}
+						&[aria-describedby^="inFact_"]{
+							border-left: 1px solid $tableThBorderColor !important;
+							&[aria-describedby*="quantity"], &[aria-describedby*="total"]{
+								background: $tableThBg;
+							}
+						}
+						&:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+							&[aria-describedby^="inFact_"]{
+								border-left: none !important ;
+							}
+						}
+				}
+			}
+			&.ui-search-toolbar{
+				td{
+					& > input{
+						height: 100%;
+						font-size: 0.71em;
+    					padding: 0 15px !important;
+					}
+				}
+			}
+		}
+		
+}
+.ui-widget{
+	font-family: $generalFont;
+}
+.ui-widget-content{
+	border: none;
+	margin-top: 15px;
+}
+.jqgrid-rownum{
+	background: $tableTRBg;
+}
+
+
+
+// таблица с инпутами
+.tableinput{
+	margin-bottom: 10px;
+    tr{
+      &.CmsHeader{
+        td, & td:first-child{
+          padding-right: 0;
+          font-size: 1em;
+          border: none;
+          color: $tableThColor;
+          background: $tableThBg;
+          padding: 12px 10px;
+            &:not(:last-child){
+              border-right: 1px solid #d0d3d9;
+              box-shadow: -1px 0 0 #e9eaec inset;
+            }
+        }
+
+      }
+      td{
+          border-bottom: 5px solid $tableTRBg;
+          border-top: 5px solid $tableTRBg;
+          background: $tableTRBg;
+          padding-left: 10px;
+          padding-right: 10px;
+        &:first-child{
+          font-size: 0.85em;
+          color: $titleColor;
+          font-weight: normal;
+
+        }
+
+      }
+    }
+
+}
+
+
+// Table in dropdown
+
+.busket-dropdown{
+	.table{
+          margin-top: 21px;
+          &.table-striped{
+          	& thead{
+				th{
+					&:first-child{
+						border-right: none;
+					}
+				}
+          	} 
+            & > tbody{
+              & > tr:nth-of-type(odd){
+                background: #fff;
+              }
+            }
+          }
+          tr{
+            th{
+              border: none;
+              font-weight: normal;
+              height: 51px;
+              vertical-align: middle;
+              background: $tableThBg;
+              color: $tableThColor;
+              &:not(:first-child){
+                padding-left: 0;
+              }
+              &:hover{
+                background: $tableThBg;
+              }
+              &:last-child{
+                width: 70px;
+              }
+            }
+            td{
+              color: $tablTdColor;
+              font-size: 0.92em;
+              font-family: 'roboto_condensedregular';
+              text-align: left;
+              height: 38px;
+              border-right: none;
+              border-left: none;
+                &:not(:first-child){
+                  padding-left: 0;
+                }
+                &:first-child{
+                  padding-left: 15px;
+                  border-right: none;
+                }
+            }
+            &.sum{
+              td{
+                background: $tableThBg;
+                color: $tableThColor;
+              }
+              
+            }
+          }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+ .ui-jqgrid .ui-jqgrid-htable tr th[id^="inFact_"] div{
+ 	max-height: 20%;
+ }
+}
+@supports (-ms-ime-align:auto) {
+  .ui-jqgrid .ui-jqgrid-htable tr th[id^="inFact_"] div{
+ 	max-height: 20%;
+ }
+}
+/*TABLE STYLE END*/

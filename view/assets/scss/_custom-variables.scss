@@ -1,0 +1,84 @@
+//fonts sizes
+$generalFontSize: 10px;
+$generalFont: 'roboto_condensedregular';
+
+$generalColorBg: #3484c1;
+
+//bg colors variables
+$generalBlueBg: #3484c1;
+$bodyBg: #ecf0f5;
+$headerBg: #3484c1;
+$navbarBrandBg: #2470a9;
+$navbarBrandHoverBg: #1f689f;
+$sidebarBg: #11202e;
+$labelNotificationBg: #ff8237;
+
+$tabBg: #fff;
+$tabBgActive: #3484c1;
+
+
+$contentBg: #f1f4f8;
+
+$btnDefaultBg: #3484c1;
+$btnDefaultHoverBg: #2470a9;
+$btnWarningBg: #ff8237;
+$btnWarningHoverBg: darken( $btnWarningBg, 10% );
+$btnDisabledBg: #c9cbce;
+
+$tableThBg: #e0e2e5;
+$tableThHoverBg: #c9cbce;
+$tableTRBg: #ecf0f5;
+$tableStripedBg: #ecf0f5;
+$tableStripeThdBg: #fff;
+$blockInfoBg: #e0e2e5;
+
+
+
+// height width
+$headerHeight: 50px;
+$sidebarWidth: 250px;
+$sidebarSmallWidth: 60px;
+$navbarBrandWidth: $sidebarWidth;
+
+// radius
+$btnBorderRadius: 2px;
+
+//text colors
+$generalBlackColor: #333;
+$generalGreyColor: #404040;
+$generalBlueColor: #3484c1;
+$generalOrangeColor: #ff8237;
+$generalColor: #000;
+$generalRedColor: #d9534f;
+$linkColor: #000;
+$navbarBrandColor: #fff;
+$breadcrumbLinkColor: #404040;
+$breadcrumbLinkColorActive: #333333;
+$btnColor: #fff;
+$tableThColor: #393838;
+$tablTdColor: #404040;
+$titleColor: #333333;
+$inputRandomColor: #2470a9;
+
+
+$tabColor: #a8adaf;
+$tabColorActive: #fff;
+$generalBlueTextColor: #2470a9;
+
+// border color
+$generalGreyBorderColor: #d6d8dc;
+$btnBorderColor: $btnDefaultBg;
+$btnHoverBorderColor: $btnDefaultHoverBg;
+
+$btnWarningBorderColor: $btnWarningBg;
+$btnWarningHoverBorderColor: $btnWarningHoverBg;
+
+$inputBorderColor: #e6e9ea;
+$inputTextColor: #404040;
+$checkboxBorderColor: #c6c7ca;
+
+
+$tableThBorderColor: #d0d3d9;
+
+
+$tabBorderColor: #e4e7e9;

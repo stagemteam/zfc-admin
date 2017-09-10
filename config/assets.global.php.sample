@@ -1,0 +1,72 @@
+<?php
+return [
+    //'assetic_configuration' => [
+        // Use on production environment
+        // 'debug'              => false,
+        // 'buildOnRequest'     => false,
+        // Use on development environment
+        'debug' => true,
+        'buildOnRequest' => true,
+
+        // This is optional flag, by default set to `true`.
+        // In debug mode allow you to combine all assets to one file.
+        // 'combine' => false,
+        // this is specific to this project
+        'webPath' => realpath('public/assets'),
+        'basePath' => 'assets',
+
+        'default' => [
+            'assets' => [
+                '@jquery_js',
+
+                '@twbs_css',
+                '@twbs_js',
+            ],
+            'options' => [
+                'mixin' => true,
+            ],
+        ],
+
+        'modules' => [
+            'jquery' => [
+                // vendor\components\jquery\jquery.min.js
+                'root_path' => realpath('vendor/components/jquery'),
+                'collections' => [
+                    /*'twbs_css' => [
+                        'assets' => [
+                            'assets/stylesheets/_bootstrap.scss'
+                        ],
+                        'filters' => ['scss' => ['name' => \Assetic\Filter\ScssphpFilter::class]],
+                        'options' => ['output' => 'twbs_css.css'],
+                    ],*/
+                    'jquery_js' => [
+                        'assets' => [
+                            // vendor\twbs\bootstrap-sass\assets\javascripts\bootstrap.min.js
+                            'jquery.min.js',
+                        ],
+                    ],
+                ],
+            ],
+            'twbs' => [
+                // vendor\twbs\bootstrap-sass\assets\stylesheets\_bootstrap.scss
+                'root_path' => realpath('vendor/twbs/bootstrap-sass'),
+                'collections' => [
+                    'twbs_css' => [
+                        'assets' => [
+                            'assets/stylesheets/_bootstrap.scss'
+                        ],
+                        'filters' => ['scss' => ['name' => \Assetic\Filter\ScssphpFilter::class]],
+                        'options' => ['output' => 'twbs_css.css'],
+                    ],
+                    'twbs_js' => [
+                        'assets' => [
+                            // vendor\twbs\bootstrap-sass\assets\javascripts\bootstrap.min.js
+                            'assets/javascripts/bootstrap.min.js',
+                        ],
+                    ],
+                ],
+            ],
+
+        ],
+    //],
+];

@@ -1,0 +1,709 @@
+@import "custom-variables";
+*{
+  -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    transition: all .3s linear;
+}
+// класс для віравнивани любого блока по вертикали
+.vertical-align {
+  &:before {
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+    margin-left:-5px;
+  }
+  & > *{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// TITLE STYLE
+h4{
+  font-size: 1.15em;
+  color: $titleColor;
+  font-family: 'roboto_condensedregular';
+}
+
+
+span.red{
+    display: inline-block;
+    color: red;
+    font-size: 0.85em;
+}
+h3{
+  small {
+    color: #333;
+  }
+}
+
+fieldset{
+  display: inline-block;
+    & + .btn{
+      margin-left: 30px;
+    }
+}
+
+// DISABLED ELEMENT STYLE
+%disabled{
+  background: $btnDisabledBg !important;
+  color: $generalGreyColor !important;
+  border-color: $btnDisabledBg !important;
+  cursor: not-allowed;
+  opacity: 0.65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+    &:hover{
+      @extend %disabled;
+    }
+}
+.disabled{
+  @extend %disabled;
+}
+*[disabled]{
+  @extend %disabled;
+}
+
+#buyer_grid_pager_right{
+  font-size: 0.85em;
+  font-family: $generalFont;
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+// статус заказа
+.status-current{
+  margin-top: 15px;
+  font-size: 0.92em;
+  color: $generalBlackColor;
+  display: inline-block;
+    span.status-name{
+      text-transform: uppercase;
+
+    }
+    & + .form-group{
+      margin-top: 15px;
+    }
+}
+.booked{
+  color: $generalBlueColor !important;
+}
+.realized{
+  color: $generalOrangeColor !important;
+}
+.canceled{
+  color: $generalGreyColor !important;
+}
+
+// BTN STYLE
+.btn-group{
+  
+  & .btn{
+      & + .btn{
+        margin-left: 30px;
+      }
+      & + .dropdown-toggle{
+        margin-left: -2px;
+      } 
+      &:first-child{
+        &:not(:last-child):not(.dropdown-toggle){
+          border-bottom-right-radius: $btnBorderRadius;
+          border-top-right-radius: $btnBorderRadius;
+        }
+      }
+      &:not(:first-child):not(:last-child):not(.dropdown-toggle){
+        border-radius: $btnBorderRadius;
+      }
+      &:last-child:not(:first-child){
+        border-bottom-left-radius: $btnBorderRadius;
+        border-top-left-radius: $btnBorderRadius;
+      }
+  }
+}
+
+.btn{
+  border-radius: $btnBorderRadius;
+  font-family: $generalFont;
+  text-transform: uppercase;
+  color: $btnColor;    
+    &:active{
+      color: $btnColor;
+    }
+    &:before{
+      content: "";
+      display: inline-block;
+    }
+
+    // кнопка с иконкой
+    &.w-icon{
+        &:before{
+          background: url(images/sprite-icon.png);
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+    }
+    // стандартная синяя кнопка
+    &.btn-default{
+      background: $btnDefaultBg;
+      border-color: $btnBorderColor;
+        &:hover{
+          background: $btnDefaultHoverBg;
+          border-color: $btnHoverBorderColor;
+          color: $btnColor;
+        }
+        &:focus{
+          color: $btnColor;
+            &:active{
+              color: $btnColor;
+              background: $btnDefaultBg;
+              border-color: $btnBorderColor;
+          }
+        } 
+    }
+    // оранжевая кнопка
+    &.btn-warning{
+      background: $btnWarningBg;
+      border-color: $btnWarningBorderColor;
+        &:hover{
+          background: $btnWarningHoverBg;
+          border-color: $btnWarningHoverBorderColor;
+          color: $btnColor;
+        }
+    }
+    // кнопка на всю ширину
+    &.full-width {
+      width: 100%;
+    }
+    // неактивная кнопка
+    &.disabled{
+      background: $btnDisabledBg;
+      color: $generalGreyColor;
+      border-color: $btnDisabledBg;
+        &:hover{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBg;
+        }
+        &:focus{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBg;
+        }
+        &:focus:active{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBg;
+        }
+    }
+}
+.button{
+  @extend .btn;
+  @extend .btn-default;
+}
+.button-place{
+  padding: 10px 0;
+}
+.btn{
+  
+  &.btn-buy{
+    &:before{
+      width: 16px;
+      height: 16px;
+      background-position: 0 0;
+      vertical-align: bottom;
+    }
+  }
+  &.btn-booking{
+    &:before{
+      width: 16px;
+      height: 16px;
+      background-position: 0 -16px;
+      vertical-align: bottom;
+    }
+  }
+  &.save-btn{
+    &:before{
+      width: 13px;
+      height: 15px;
+      background-position: 0 -80px;
+    }
+  }
+  &.realization-btn{
+    &:before{
+      width: 13px;
+      height: 15px;
+      background-position: 0 -95px;
+    }
+  }
+  &.delete-btn{
+    &:before{
+      width: 13px;
+      height: 13px;
+      background-position: 0 -110px;
+
+    }
+  }
+  &.btn-add{
+    &:before{
+      width: 13px;
+      height: 13px;
+      background-position: 0 -123px;
+    }
+  }
+  &.barcode-print{
+    padding: 4px 9px;
+    background: #cdcfd1;
+    border-color: #cdcfd1;
+    border-bottom: 2px solid #c1c2c3;
+    &:before{
+      background: url('images/table-sprite.png') no-repeat;
+      background-position: -0px -16px;
+      width: 16px;
+      height: 13px;
+    }
+    &:hover{
+      background: $tableThHoverBg;
+      border-color: #cdcfd1;
+      border-bottom: 2px solid #c1c2c3;
+    }
+  }
+  &.btn-addToCart{
+    padding: 4px 9px;
+    border-bottom: 2px solid #1d6fae;
+    &:before{
+      background: url('images/table-sprite.png') no-repeat;
+      background-position: -0px -41px; 
+      width: 14px; 
+      height: 12px;
+    }
+  }
+}
+#importer{
+  .btn{
+    margin-left: 15px;
+  }
+}
+.barcode-print {
+  &.input-group-addon{
+    padding: 2px 9px;
+    background: #e6e9ea;
+    border-color: #e6e9ea;
+  }
+  &:before {
+  content: '';
+  display: inline-block;
+  background: url('images/table-sprite.png') no-repeat;
+  background-position: -0px -16px;
+  width: 16px;
+  height: 13px;
+  vertical-align: middle;
+  }
+}
+// input style
+.form-control, input[type="text"], input[type="date"], input[type="number"], select, textarea{
+  border-radius: 0;
+  border: 2px solid $inputBorderColor;
+  // font-size: 1.4em;
+  color: $inputTextColor;
+  font-family: $generalFont;
+  height: 34px;
+  width: 100%;
+  padding: 6px 12px;
+  vertical-align: middle;
+    &[readonly]{
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      padding-left: 0;
+      font-size: 2.4em;
+      color: $inputRandomColor;
+        &:focus{
+          border-color: transparent;
+          outline: 0;
+          box-shadow: none;
+        }
+    }
+    &:focus{
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+    &.disabled{
+        @extend %disabled;
+        &:hover{
+          @extend %disabled;
+        }
+        &:focus{
+          @extend %disabled;
+        }
+        &:active{
+          @extend %disabled;
+        }
+    }
+    &[disabled]{
+      @extend %disabled;
+    }
+}
+
+input[type="file"]{
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0;
+  width: auto;
+  margin: 15px 0;
+  height: auto;
+    &:focus{
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+}
+input[type="button"]{
+  background: black;
+}
+
+.toolbar{
+  .form-addToCart{
+    input{
+      width: 350px;
+    }
+  }
+}
+.form-addToCart{
+  input{
+    width: 38px;
+    height: 24px;
+    padding: 2px;
+    font-size: 0.85em;
+
+  }
+  .btn{
+    margin-left: 7px;
+  }
+}
+// форма в линию
+.form-inline{
+  .form-group{
+    width: 100%;
+      .form-control, input[type="text"], select, textarea{
+        width: 100%;
+      }
+  }
+  .checkbox{
+    label{
+      padding-left: 34px;
+    }
+  }
+} 
+label{
+  font-family: $generalFont;
+  color: $titleColor;
+  font-weight: normal;
+  white-space: nowrap;
+    & span{
+      display: block;
+      font-size: 1.15em;
+      text-transform: uppercase;
+    }
+}
+
+// стили для чекбокса
+.checkbox{
+  input[type="checkbox"]{
+    width: 100%;
+    position: absolute !important;
+    top: 0;
+    -webkit-z-index: 99;
+    -moz-z-index: 99;
+    -ms-z-index: 99;
+    -o-z-index: 99;
+    z-index: 99;
+     -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance:none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    opacity: 0;
+      &:checked{
+        & + label{
+            &:before{
+              background: url(images/checkbox-check.png) no-repeat center;
+            }
+        }
+      }
+      &.disabled, &[disabled]{
+        &:checked{
+          & + label{
+            &:before{
+              background: $btnDisabledBg url(images/checkbox-check.png) no-repeat center;
+            }
+          }
+        }
+        & + label{
+          &:before{
+            background: $btnDisabledBg;
+          }
+        }
+        &:hover, &:active, &:focus{
+          background: transparent;
+          cursor: not-alowed;
+        }
+      }
+  }
+  label{
+    display: inline-block;
+    color: $inputTextColor;
+    font-size: 1em;
+    line-height: 18px;
+    width: 164px;
+    padding-left: 34px;
+    white-space: normal;
+    text-transform: none;
+    position: relative;
+      &:before{
+        content:"";
+        display: inline-block;
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border: 2px solid $checkboxBorderColor;
+        left: 0;
+        top: 50%;
+        margin-top: -13px;
+        background: transparent;
+        border-radius: 3px;
+      }
+ 
+  } 
+}
+
+
+// DROPDOWN STYLE
+.busket-wrap{
+  width: 455px;
+  margin-top: 7px;
+    .btn{
+      margin-left: 20px;
+    }
+    .dropdown{
+      display: inline-block;
+    }
+    .busket-dropdown{
+      width: 455px;
+      min-height: 335px;
+      border-radius: 10px;
+      right: 0;
+      left: auto;
+      top: 55px;
+      border: none;
+      padding: 16px 0;
+      text-align: center;
+      // font-size: $generalFontSize;
+        &:before{
+          content: "";
+          position: absolute;
+          top: -15px;
+          right: 35px;
+          width: 0;
+          height: 0;
+          border: 15px solid transparent;
+          border-bottom-color: #fff;
+          border-top: 0;
+          border-left-width: 13px;
+          border-right-width: 13px;   
+        }
+        h6{
+          color: $generalBlueTextColor;
+          font-size: 1em;
+          font-family: 'roboto_condensedregular';
+          margin-top: 7px;
+        }
+        
+        .close{
+          position: absolute;
+          top: 12px;
+          right: 9px;
+          color: $generalBlueTextColor;
+          opacity: 1;
+        }
+        .btn{
+          margin: 21px 0 0 0;
+          padding: 10px 35px;
+        }
+    }
+}
+// icon
+.block-icon{
+  color: $generalRedColor;
+    &:hover{
+      color: $generalGreyColor;
+    }
+}
+.overflow-y{
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+// sprite
+.barcode-icon, .camera-icon, .cart-icon, .chev-left-icon, 
+.chev-right-icon, .paper-icon, .pencil-edit-icon, .settings-icon, 
+.delete-icon, .inbox-icon, .outbox-icon, .remove-icon{
+  background: url(images/sprites.png) no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+.outbox-icon {
+    background-position: -16px -195px;
+    width: 16px;
+    height: 16px;
+}
+.inbox-icon {
+    background-position: 0 -195px;
+    width: 16px;
+    height: 16px;
+}
+
+._bg-for-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+}
+
+// synchronization
+.synchronization-wrap{
+  display: inline-block;
+  //margin-bottom: 10px;
+  font-size: 0;
+  vertical-align: middle;
+  & + *{
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}
+.synchronization-on-hover{
+  display: none;
+  opacity: 0;
+  top: 160%;
+  left: 50%;
+  position: absolute;
+  max-width: 450px;
+  z-index: 999;
+}
+.synchronization-on-hover-content{
+  padding: 10px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: #fff;
+  width: 250px;
+  text-align: center;
+  color: #333;
+  white-space: normal;
+  word-break: break-word;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+  font-size: 14px;
+  dl{
+    margin-bottom: 0;
+  }
+  &::before{
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: -10px;
+    left:50%;
+    margin-left: -10px;
+  }
+}
+//.synchronization-hover:hover  .synchronization-on-hover{
+//  display: block;
+//  opacity: 1;
+//}
+.synchronization-error{
+  border: 1px solid #f63913;
+  border-radius: 2px;
+  padding: 5px 100px;
+  display: inline-block;
+  color: #f63913;
+  position: relative;
+  &::before, .synchronization-success::before{
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: url("images/sinhro-sprite.png") no-repeat center;
+    background-position: -5px -0px;
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    margin-top: -8px;
+  }
+  dl{
+    margin-bottom: 0;
+  }
+}
+.synchronization-success{
+  @extend .synchronization-error;
+  border: 1px solid #78c479;
+  color: #78c479;
+  &::before{
+    background-position: -5px -21px;
+  }
+}
+.synchronization-hover{
+  display: inline-block;
+  position: relative;
+  font-size: 0;
+  & + *{
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 12px;
+  }
+}
+.error-img, .success-img{
+  display: inline-block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: url("images/sinhro-sprite.png") no-repeat center;
+  background-position: -5px -0px;
+}
+.success-img{
+  background-position: -5px -21px;
+}
+.synchro-status-list{
+  margin-top: 10px;
+  display: block;
+}
+.try-to-synchronize{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #3484c1 url("images/sinhro-sprite.png") no-repeat center;
+  background-position: -4px -41px;
+  color: transparent;
+  text-indent: -99999px;
+  border-radius: 50%;
+}
+.ui-jqgrid .ui-jqgrid-btable tbody tr.jqgrow td{
+  overflow: visible !important;
+}

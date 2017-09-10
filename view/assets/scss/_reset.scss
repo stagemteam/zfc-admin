@@ -1,0 +1,109 @@
+@import "custom-variables";
+
+body{
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: $generalFont;
+  background-color: $bodyBg;
+  line-height: 1;
+  color: $generalColor;
+}
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  font-weight:normal;
+}
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  color: $linkColor;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+a:visited, a:link, a:active, a:focus{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  border: none;
+}
+form{
+  margin: 0;
+}
+input:not(.ui-jqgrid input){
+  border: none;
+  -webkit-appearance: none;
+}
+input[type="submit"]{
+  cursor: pointer;
+  border: none;
+}
+textarea{
+  resize: vertical;
+  border: none;
+  -webkit-appearance: none;
+  overflow: auto;
+}
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+*, *:focus {
+  outline: none !important;
+}
+label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+*:before, *:after {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input, textarea, input:before, textarea:before, input:after, textarea:after {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+button{
+  border: none;
+}
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+th {
+  font-weight: bold;
+}

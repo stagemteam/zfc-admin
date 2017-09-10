@@ -1,0 +1,56 @@
+<?php
+/** @var \Magere\User\View\Helper\User $userHelper */
+if (!$this->getHelperPluginManager()->has('user')) {
+    return;
+}
+if (!($userHelper = $this->plugin('user')) || !$userHelper->hasIdentity()) {
+    return;
+}
+
+/** @var \Popov\Menu\View\Helper\MenuHelper $menuHelper */
+$menuHelper = $this->menu();
+$menuHome = $menuHelper->menuIcon();
+//$controller = $this->current('controller');
+?>
+
+    <!--<div class="sidebar">
+    <ul>
+        <?php /*foreach ($menuHome as $menu) : */?>
+            <?php /*$notification = ''; */?>
+            <?php /*if (!in_array($menu->getController(), ['store', 'order-sale', 'car-detail-defect', 'clients'])) : */?>
+                <?php /*$html = $this->urls($menu); */?>
+                <?php /*if ($html != '') : */?>
+
+                    <?php /*if ($menu->getController() == 'documents') : */?>
+                        <?php /*$notification = $this->documents()->numberUnread(); */?>
+                    <?php /*elseif ($menu->getController() == 'shop-promotional-products') : */?>
+                        <?php /*$notification = $this->shopPromotionalProducts()->numberUnread($menu->getController()) */?>
+                    <?php /*endif; */?>
+
+                    <?php /*$selected = ($menu->getController() == $controller) ? 'active ' : ''; */?>
+                    <li class="<?/*= $selected . $menu->getController() */?>-ic">
+                        <?/*= $html /* this is <a/> */ ?>
+                        <?php /*if ($notification) : */?>
+                            <span class="label label-warning"><?/*= $notification */?></span>
+                        <?php /*endif; */?>
+                    </li>
+                <?php /*endif; */?>
+            <?php /*endif; */?>
+        <?php /*endforeach; */?>
+
+        <?php /*
+        <li class="active"><a href="#" class="staff-ic">Наши сотрудники</a></li>
+        <li><a href="#" class="call-center-ic">Колл центр</a></li>
+        <li>
+            <a href="#" class="pro-products-ic">Рекламная продукция</a>
+            <span class="label label-warning">0</span>
+        </li>
+        <li><a href="#" class="shop-spares-ic">Магазин запчастей</a></li>
+        <li><a href="#" class="documents-ic">Приказы и распоряжения</a></li>
+        <li><a href="#" class="warranty-ic">Гарантия и сервис</a></li>
+        <li><a href="#" class="logistics-ic">Логистика</a></li>
+        <li><a href="#" class="credit-ic">Льготное кредитование</a></li>
+        <li><a href="#" class="settings-ic">Настройки</a></li>
+        ?>
+    </ul>
+</div>-->

@@ -1,0 +1,113 @@
+<?= $this->doctype() ?>
+<?php
+//$controller = $this->layout()->route ? $this->layout()->route->getParam('controller') : '';
+//$action = $this->layout()->route ? $this->layout()->route->getParam('action') : '';
+//$parent = $this->layout()->route ? $this->layout()->route->getParam('parent') : '';
+
+//$cookie = $this->layout()->request ? $this->layout()->request->getCookie() : '';
+
+$title = 'On Record';
+?>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!--<meta name="author" content="Popov Company" />
+        <meta name="description" content="Popov Cloud - Business System" />
+        <meta name="keywords" content="e-commerce" />
+        <meta name="application-name" content="Popov Cloud - Business System" />-->
+
+        <?= $this->headTitle($title)->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <?= $this->headLink() ?>
+        <?= $this->headStyle() ?>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- HEADER START -->
+            <header class="navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <a class="navbar-brand text-center" href="#"><span><?= $title ?></span></a>
+                        <div class="sidebar-toggle pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <!-- logout -->
+                        <?php if ($this->resolver('widget/logout')) : ?>
+                            <?php echo $this->partial('widget/logout'); ?>
+                        <?php endif; ?>
+                        <!-- End logout -->
+
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER END -->
+
+             <!-- MAIN START -->
+            <main>
+
+                <!-- menu -->
+                <?php if ($this->resolver('widget/menu')) : ?>
+                    <?php echo $this->partial('widget/menu'); ?>
+                <?php endif; ?>
+                <!-- End menu -->
+
+                <div class="content">
+                    <div class="content-header">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-lg-8">
+                                    <!-- breadcrumb -->
+                                    <?php if ($this->resolver('admin/breadcrumb')) : ?>
+                                        <?= $this->partial('admin/breadcrumb'); ?>
+                                    <?php endif; ?>
+                                    <!-- End breadcrumb -->
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <?php if ($this->resolver('cart/mini-cart')) : ?>
+                                        <?= $this->partial('cart/mini-cart') ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <?php /*
+                            <div class="row">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">основные данные</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">документы</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">история</a></li>
+                                </ul>
+                            </div>
+                            */ ?>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <?php if ($this->resolver('widget/flashMessages')) : ?>
+                            <?= $this->partial('widget/flashMessages') ?>
+                        <?php endif; ?>
+
+                        <div class="container-fluid">
+                            <?= $this->content ?>
+                        </div>
+                    </div>
+                </div>
+            </main>
+             <!-- HEADER END -->
+        </div>
+        <?php // main content ?>
+        
+
+       
+
+        <?php // Include all JS ?>
+        <?= $this->headScript() ?>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>

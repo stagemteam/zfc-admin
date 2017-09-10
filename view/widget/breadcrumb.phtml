@@ -1,0 +1,32 @@
+<?php /** @link http://stackoverflow.com/a/14769777/1335142 http://stackoverflow.com/a/8896221/1335142 */ ?>
+<?php $container = $this->navigation()->breadcrumbs()  ?>
+<?php /* @var $container \Zend\View\Helper\Navigation\Breadcrumbs */ ?>
+<?php $navigation = $container->getContainer() ?>
+<?php /* @var $navigation \Zend\Navigation\Navigation */ ?>
+
+<ol class="breadcrumb">
+    <?php /*<li><a href="<?php echo $this->url('soemroute') ?>">Home</a> <span class="divider">/</span></li>*/ ?>
+    <?php foreach($this->pages as $page): ?>
+        <?php /* @var $page \Zend\Navigation\Page\Mvc */ ?>
+        <?php if( ! $page->isActive()): ?>
+            <li>
+                <a href="<?php echo $page->getHref() ?>"><?php echo $page->getLabel() ?></a>
+                <span class="divider"></span>
+            </li>
+        <?php else: ?>
+            <li class="active">
+                <?php if($container->getLinkLast()): ?><a href="<?php echo $page->getHref() ?>"><?php endif ?>
+                    <?php echo $page->getLabel() ?>
+                    <?php if($container->getLinkLast()): ?></a><?php endif ?>
+            </li>
+        <?php endif ?>
+    <?php endforeach ?>
+</ol>
+
+<?php /*
+<ol class="breadcrumb">
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">Магазин запчастей</a></li>
+    <li class="active">Заявка</li>
+</ol>
+ */ ?>
