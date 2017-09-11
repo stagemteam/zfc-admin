@@ -1,5 +1,5 @@
 <?php
-/** @var \Magere\User\View\Helper\User $userHelper */
+/** @var \Magere\UserPlugin\View\Helper\UserPlugin $userHelper */
 if (!$this->getHelperPluginManager()->has('user')) {
     return;
 }

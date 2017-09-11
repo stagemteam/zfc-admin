@@ -41,7 +41,7 @@ h3{
 }
 
 fieldset{
-  display: inline-block;
+  //display: inline-block;
     & + .btn{
       margin-left: 30px;
     }
@@ -303,7 +303,7 @@ fieldset{
   }
 }
 // input style
-.form-control, input[type="text"], input[type="date"], input[type="number"], select, textarea{
+.form-control, input[type="text"], input[type="date"], input[type="number"], input[type="password"], select, textarea{
   border-radius: 0;
   border: 2px solid $inputBorderColor;
   // font-size: 1.4em;
