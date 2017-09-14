@@ -46,7 +46,7 @@ return [
                             
                         ],
                         'filters' => ['scss' => ['name' => \Assetic\Filter\ScssphpFilter::class]],
-                        'options' => ['output' => 'core_css.css'],
+                        'options' => ['output' => 'layout.css'],
                     ],
                     'core_js' => [
                         'assets' => [

@@ -216,6 +216,11 @@ table, .table, .table-striped{
 					}
 				}
 			}
+            [class*="glyphicon-"] {
+              /*vertical-align: middle;*/
+              font-size: 1.2em;
+              margin: 0 4px;
+            }
 		}
 		.table-bordered{
 			border-right: 0px none !important;
