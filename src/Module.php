@@ -42,7 +42,7 @@ class Module
     {
         if (($request = $e->getRequest()) instanceof HttpRequest
             && $request->isXmlHttpRequest()
-            //&& ($request->getServer('APPLICATION_ENV') === 'production') // @todo Improve
+            && ($request->getServer('APPLICATION_ENV') !== 'development') // @todo Improve
         ) {
             /** @var \Exception $exception */
             $exception = $e->getParam('exception');
