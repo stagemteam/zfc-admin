@@ -1,5 +1,5 @@
 {
-  "name": "popov/zfc-admin",
+  "name": "stagem/zfc-admin",
   "description": "ZF Admin module",
   "type": "zf-module",
   "license": "MIT",
@@ -10,7 +10,7 @@
   ],
   "authors": [
     {
-      "name": "Serhii Stagem",
+      "name": "Serhii Popov",
       "email": "popow.serhii@gmail.com",
       "role": "Developer"
     }
