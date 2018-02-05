@@ -7,7 +7,7 @@ if (!($userHelper = $this->plugin('user')) || !$userHelper->hasIdentity()) {
     return;
 }
 
-/** @var \Popov\Menu\View\Helper\MenuHelper $menuHelper */
+/** @var \Stagem\Menu\View\Helper\MenuHelper $menuHelper */
 $menuHelper = $this->menu();
 $menuHome = $menuHelper->menuIcon();
 //$controller = $this->current('controller');

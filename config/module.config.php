@@ -1,40 +1,16 @@
 <?php
-namespace Popov\ZfcLayout;
-
-use Zend\Mvc\Router\Http\Literal;
-use Zend\Mvc\Router\Http\Segment;
-//use Zend\Router\Http\Literal;
-//use Zend\Router\Http\Segment;
+namespace Stagem\ZfcAdmin;
 
 return [
+    'assetic_configuration' => require 'assets.config.php',
 
-    'assetic_configuration' => array_merge_recursive(
-        require_once realpath('config/autoload/assets.php'),
-        require_once 'assets.config.php'
-    ),
+    // mvc
+    'router' => require 'routes.mvc.config.php',
 
-    'router' => require_once 'routes.config.php',
+    // middleware
+    'routes' => require 'routes.middleware.config.php',
 
-
-    /*'router' => [
-        'routes' => require_once 't.php'
-    ],*/
-
-    /*'router' => [
-        'routes' => [
-            'home' => [
-                'type' => Literal::class,
-                'options' => [
-                    'route'    => '/',
-                    'defaults' => [
-                        'controller' => 'index',
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
-        ],
-    ],*/
-
+    // mvc
     'controllers' => [
         'invokables' => [
             'index' => Controller\HomeController::class,
@@ -49,6 +25,7 @@ return [
 		]
 	],
 
+    // mvc
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions' => true,
@@ -58,7 +35,6 @@ return [
         'template_map' => [
             'layout/layout' => __DIR__ . '/../view/layout/default.phtml',
             'layout/ajax' => __DIR__ . '/../view/layout/ajax.phtml',
-            //'widget/menu'	=> __DIR__ . '/../view/widget/menu.phtml',
             'widget/breadcrumb' => __DIR__ . '/../view/widget/breadcrumb.phtml',
             'widget/flashMessages' => __DIR__ . '/../view/widget/flashMessages.phtml',
             'error/404' => __DIR__ . '/../view/error/404.phtml',
@@ -66,6 +42,14 @@ return [
         ],
         'template_path_stack' => [
             __NAMESPACE__ => __DIR__ . '/../view',
+        ],
+    ],
+
+    // middleware
+    'templates' => [
+        'paths' => [
+            'admin-admin'  => [__DIR__ . '/../view/admin'],
+            'layout' => [__DIR__ . '/../view/layout'],
         ],
     ],
 ];

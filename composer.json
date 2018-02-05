@@ -10,7 +10,7 @@
   ],
   "authors": [
     {
-      "name": "Serhii Popov",
+      "name": "Serhii Stagem",
       "email": "popow.serhii@gmail.com",
       "role": "Developer"
     }
@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Popov\\ZfcAdmin\\": "src/"
+      "Stagem\\ZfcAdmin\\": "src/"
     }
   }
 }

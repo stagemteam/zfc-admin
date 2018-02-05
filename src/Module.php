@@ -1,6 +1,6 @@
 <?php
 
-namespace Popov\ZfcLayout;
+namespace Stagem\ZfcAdmin;
 
 use Zend\Mvc\MvcEvent;
 use Zend\Mvc\ModuleRouteListener;

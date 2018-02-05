@@ -1,18 +1,8 @@
 <?php
-namespace Popov\ZfcLayout;
+namespace Stagem\ZfcAdmin;
 
 return [
     //'assetic_configuration' => [
-    // Use on development environment
-        'debug' => false,
-        'buildOnRequest' => false,
-
-        // This is optional fla// This is optional flag, by default set to `true`.
-        // In debug mode allow you to combine all assets to one file.
-        // 'combine' => false,
-        // this is specific to this project
-        'webPath' => realpath('public') . '/assets',
-        'basePath' => 'assets',
 
         'default' => [
             'assets' => [
@@ -41,9 +31,6 @@ return [
                             'scss/_preloader.scss',
                             //'scss/spare-view.scss',
                             'scss/_media.scss',
-                             // все що відноситься до layout проекту ви зберігаєте в папці sccs, воно по шаблону підтягнеться і трансформується у css. Тому не потрібно заморочуватись з підключенням
-                            // вам це все нове, тому краще ви задавайте запитання
-                            
                         ],
                         'filters' => ['scss' => ['name' => \Assetic\Filter\ScssphpFilter::class]],
                         'options' => ['output' => 'layout.css'],
@@ -67,6 +54,7 @@ return [
                             'targetPath' => 'fonts',
                         ],
                     ],
+
                     'core_images' => [
                           'assets' => [
                             'images/*.png',
