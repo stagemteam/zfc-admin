@@ -15,7 +15,7 @@
 
 namespace Stagem\ZfcAdmin;
 
-use Stagem\Action\Page;
+use Stagem\ZfcAction\Page;
 
 return [
     [
@@ -26,20 +26,20 @@ return [
         'options' => [
             'layout' => 'admin',
             'area' => 'admin',
-            'module' => 'admin',
+            'resource' => 'admin',
             'action' => 'dashboard',
         ],
     ],
     [
         'name' => 'admin/default',
-        'path' => '/admin/{module:[a-z-]{3,}}[/[{action:[a-z-]{3,}}[/[{id:\d+}[/{more:.*}]]]]]',
+        'path' => '/admin/{resource:[a-z-]{3,}}[/[{action:[a-z-]{3,}}[/[{id:\d+}[/{more:.*}]]]]]',
         'middleware' => [Page\ConnectivePage::class, Page\RendererMiddleware::class],
         #'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE'],
         'options' => [ // @todo Add AreaMiddleware which will be check current area as here https://github.com/acelaya/alejandrocelaya.com/blob/master/src/Middleware/LanguageMiddleware.php
             'layout' => 'admin',
             'area' => 'admin',
-            //'module' => 'admin',
-            //'action' => 'dashboard',
+            'resource' => 'index',
+            'action' => 'index',
         ],
     ],
 ];
