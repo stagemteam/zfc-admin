@@ -4,21 +4,34 @@ namespace Stagem\ZfcAdmin;
 return [
     //'assetic_configuration' => [
 
-        'default' => [
+        /*'default' => [
             'assets' => [
-                '@core_css',
-                '@core_js',
+                '@admin_css',
+                '@admin_js',
             ],
             'options' => [
                 'mixin' => true,
             ],
+        ],*/
+
+
+    'routes' => [
+        'admin(.*)' => [
+            //'assets' => [
+            '@admin_css',
+            '@admin_js',
+            //],
+            //'options' => [
+            //    'mixin' => true,
+            //],
         ],
+    ],
 
         'modules' => [
             __NAMESPACE__ => [
                 'root_path' => __DIR__ . '/../view/assets',
                 'collections' => [
-                    'core_css' => [
+                    'admin_css' => [
                         'assets' => [
                             'scss/_custom-variables.scss',
                             'scss/_reset.scss',
@@ -35,7 +48,7 @@ return [
                         'filters' => ['scss' => ['name' => \Assetic\Filter\ScssphpFilter::class]],
                         'options' => ['output' => 'layout.css'],
                     ],
-                    'core_js' => [
+                    'admin_js' => [
                         'assets' => [
                             'js/main.js',
                             'js/modal.js',
@@ -44,7 +57,7 @@ return [
                         ],
                     ],
 
-                    'core_fonts' => [
+                    'admin_fonts' => [
                         'assets' => [
                             'fonts/*',
                         ],
@@ -55,7 +68,7 @@ return [
                         ],
                     ],
 
-                    'core_images' => [
+                    'admin_images' => [
                           'assets' => [
                             'images/*.png',
                             'images/*.jpg',
