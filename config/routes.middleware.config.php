@@ -24,7 +24,7 @@ return [
         'middleware' => [Action\Admin\IndexAction::class, Page\RendererMiddleware::class],
         'allowed_methods' => ['GET'],
         'options' => [
-            'layout' => 'admin',
+            //'layout' => 'admin',
             'area' => 'admin',
             'resource' => 'admin',
             'action' => 'dashboard',
@@ -36,7 +36,7 @@ return [
         'middleware' => [Page\ConnectivePage::class, Page\RendererMiddleware::class],
         #'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE'],
         'options' => [ // @todo Add AreaMiddleware which will be check current area as here https://github.com/acelaya/alejandrocelaya.com/blob/master/src/Middleware/LanguageMiddleware.php
-            'layout' => 'admin',
+            //'layout' => 'admin',
             'area' => 'admin',
             'resource' => 'index',
             'action' => 'index',
