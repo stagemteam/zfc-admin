@@ -6,7 +6,7 @@
 
 //$cookie = $this->layout()->request ? $this->layout()->request->getCookie() : '';
 
-$title = 'On Record';
+$title = $this->sysConfig('design/general/system_name');
 ?>
 <html>
     <head>
@@ -52,8 +52,8 @@ $title = 'On Record';
             <main>
 
                 <!-- menu -->
-                <?php if ($this->resolver('widget/menu')) : ?>
-                    <?php echo $this->partial('widget/menu'); ?>
+                <?php if ($this->resolver('widget::menu')) : ?>
+                    <?= $this->partial('widget::menu') ?>
                 <?php endif; ?>
                 <!-- End menu -->
 
