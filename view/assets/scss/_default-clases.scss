@@ -405,10 +405,12 @@ label{
   color: $titleColor;
   font-weight: normal;
   white-space: nowrap;
+  padding: 5px;
     & span{
       display: block;
       font-size: 1.15em;
-      text-transform: uppercase;
+      padding: 5px;
+      //text-transform: uppercase;
     }
 }
 
