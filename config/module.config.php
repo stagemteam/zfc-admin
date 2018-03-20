@@ -8,7 +8,8 @@ return [
     'router' => require 'routes.mvc.config.php',
 
     // middleware
-    'routes' => require 'routes.middleware.config.php',
+    //'routes' => require 'routes.middleware.config.php',
+    'routes' => require 'routes.slim.config.php',
 
     // mvc
     'controllers' => [
