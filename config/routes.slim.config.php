@@ -16,6 +16,7 @@
 namespace Stagem\ZfcAdmin;
 
 use Stagem\ZfcAction\Page;
+use Popov\ZfcPermission\PermissionMiddleware;
 
 return [
     /*[
@@ -38,7 +39,7 @@ return [
     [
         'name' => 'admin/home',
         'path' => '/admin',
-        'middleware' => [Action\Admin\IndexAction::class, Page\RendererMiddleware::class],
+        'middleware' => [PermissionMiddleware::class, Action\Admin\IndexAction::class, Page\RendererMiddleware::class],
         'allowed_methods' => ['GET'],
         'options' => [
             'defaults' => [
@@ -52,7 +53,7 @@ return [
         'name' => 'admin/default',
         //'path' => '/admin/{resource:[a-z-]{3,}}[/[{action:[a-z-]{3,}}[/{id:\d+}[/{more:.*}]]]]',
         'path' => '/admin(/:resource(/:action(/:id(/:more+))))',
-        'middleware' => [Page\ConnectivePage::class, Page\RendererMiddleware::class],
+        'middleware' => [PermissionMiddleware::class, Page\ConnectivePage::class, Page\RendererMiddleware::class],
         #'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE'],
         'options' => [ // @todo Add AreaMiddleware which will be check current area as here https://github.com/acelaya/alejandrocelaya.com/blob/master/src/Middleware/LanguageMiddleware.php
             'defaults' => [
