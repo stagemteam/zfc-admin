@@ -21,7 +21,7 @@ return [
     [
         'name' => 'admin/home',
         'path' => '/admin',
-        'middleware' => [Action\Admin\IndexAction::class, Page\RendererMiddleware::class],
+        'middleware' => [Action\Admin\DashboardAction::class, Page\RendererMiddleware::class],
         'allowed_methods' => ['GET'],
         'options' => [
             //'layout' => 'admin',

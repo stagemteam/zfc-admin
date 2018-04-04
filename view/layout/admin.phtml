@@ -38,8 +38,8 @@ $title = $this->sysConfig('design/general/system_name');
                         </div>
 
                         <!-- logout -->
-                        <?php if ($this->resolver('widget/logout')) : ?>
-                            <?php echo $this->partial('widget/logout'); ?>
+                        <?php if ($this->resolver('widget::logout')) : ?>
+                            <?= $this->partial('widget::logout') ?>
                         <?php endif; ?>
                         <!-- End logout -->
 

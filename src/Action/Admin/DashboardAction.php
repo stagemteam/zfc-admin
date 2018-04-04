@@ -19,19 +19,13 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Http\Server\MiddlewareInterface;
-//use Interop\Http\Server\MiddlewareInterface;
-use Zend\Diactoros\Response\HtmlResponse;
 
 use Zend\View\Model\ViewModel;
 
-class IndexAction implements MiddlewareInterface
+class DashboardAction implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        /*return (new HtmlResponse(
-            $this->template->render('admin-admin::index', $data)
-        ));*/
-
         $viewModel = new ViewModel(['message'=> '<h1>Hello, Ukraine!</h1>']);
 
         return $handler->handle($request->withAttribute(ViewModel::class, $viewModel));

@@ -19,27 +19,10 @@ use Stagem\ZfcAction\Page;
 use Popov\ZfcPermission\PermissionMiddleware;
 
 return [
-    /*[
-        'name' => 'default/more',
-        //'path' => '/[:resource[/[:action[/:more]]]]',
-        'path' => '(/:locale)(/:resource(/:action(/:more+)))',
-        'middleware' => [Page\ConnectivePage::class, Page\RendererMiddleware::class],
-        'options' => [
-            'conditions' => [
-                'resource' => '[a-zA-Z]?[a-zA-Z0-9_-]*',
-                'action' => '[a-zA-Z]?[a-zA-Z0-9_-]*',
-                'more' => '.*',
-            ],
-            'defaults' => [
-                'resource' => 'index',
-                'action' => 'index',
-            ],
-        ],
-    ],*/
-    [
+    'admin/home' => [
         'name' => 'admin/home',
         'path' => '/admin',
-        'middleware' => [PermissionMiddleware::class, Action\Admin\IndexAction::class, Page\RendererMiddleware::class],
+        'middleware' => [PermissionMiddleware::class, Action\Admin\DashboardAction::class, Page\RendererMiddleware::class],
         'allowed_methods' => ['GET'],
         'options' => [
             'defaults' => [
@@ -49,7 +32,7 @@ return [
             ],
         ],
     ],
-    [
+    'admin/default' => [
         'name' => 'admin/default',
         //'path' => '/admin/{resource:[a-z-]{3,}}[/[{action:[a-z-]{3,}}[/{id:\d+}[/{more:.*}]]]]',
         'path' => '/admin(/:resource(/:action(/:id(/:more+))))',
