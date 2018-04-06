@@ -89,8 +89,8 @@ $title = $this->sysConfig('design/general/system_name');
                         </div>
                     </div>
                     <div class="content-body">
-                        <?php if ($this->resolver('widget/flashMessages')) : ?>
-                            <?= $this->partial('widget/flashMessages') ?>
+                        <?php if ($this->resolver('widget::flash-messages')) : ?>
+                            <?= $this->partial('widget::flash-messages') ?>
                         <?php endif; ?>
 
                         <div class="container-fluid">
