@@ -414,6 +414,10 @@ label{
     }
 }
 
+/*.checkbox label:before {
+    background: url(images/checkbox-check.png) no-repeat center !important;
+}*/
+
 // стили для чекбокса
 .checkbox{
   input[type="checkbox"]{
@@ -435,9 +439,23 @@ label{
     box-shadow: none;
     cursor: pointer;
     opacity: 0;
-      &:checked{
+
+
+    /*.checkbox label {
+      &:before {
+        background: url(images/checkbox-check.png) no-repeat center !important;
+      }
+    }
+
+    .checkbox input[type="checkbox"] {
+      &:before {
+          background: url(images/checkbox-check.png) no-repeat center !important;
+      }
+    }*/
+
+      &:checked {
         & + label{
-            &:before{
+            &::before{
               background: url(images/checkbox-check.png) no-repeat center;
             }
         }
@@ -708,4 +726,8 @@ label{
 }
 .ui-jqgrid .ui-jqgrid-btable tbody tr.jqgrow td{
   overflow: visible !important;
+}
+
+.alert {
+  margin: 20px 0;
 }
