@@ -11,7 +11,7 @@ return [
     //'routes' => require 'routes.middleware.config.php',
     'routes' => require 'routes.slim.config.php',
 
-    'middleware' => [
+    'actions' => [
         'admin' => __NAMESPACE__
     ],
 
