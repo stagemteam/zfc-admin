@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
 	var stagemDatepickerOptions = {
 		//dateFormat: 'dd/mm/yy',
 		dateFormat: 'yy-mm-dd',
+    altFormat: 'yy-mm-dd 00:00:00',
 		changeMonth: true,
 		changeYear: true,
 		//yearRange: '1920:'
