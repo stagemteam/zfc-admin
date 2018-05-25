@@ -25,6 +25,7 @@
   },
   "extra": {
     "zf": {
+	  "component": "Stagem\\ZfcAdmin",
       "config-provider": "Stagem\\ZfcAdmin\\ConfigProvider"
     }
   }
