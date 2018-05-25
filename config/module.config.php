@@ -4,15 +4,8 @@ namespace Stagem\ZfcAdmin;
 return [
     'assetic_configuration' => require 'assets.config.php',
 
-    // mvc
-    'router' => require 'routes.mvc.config.php',
-
-    // middleware
-    //'routes' => require 'routes.middleware.config.php',
-    'routes' => require 'routes.slim.config.php',
-
     'actions' => [
-        'admin' => __NAMESPACE__
+        'admin' => __NAMESPACE__ . '\Action'
     ],
 
     // mvc
