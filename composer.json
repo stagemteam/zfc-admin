@@ -17,6 +17,7 @@
   ],
   "require": {
     "php": ">=7.0"
+
   },
   "autoload": {
     "psr-4": {
@@ -25,6 +26,7 @@
   },
   "extra": {
     "zf": {
+      "component": "Stagem\\ZfcAdmin",
       "config-provider": "Stagem\\ZfcAdmin\\ConfigProvider"
     }
   }
