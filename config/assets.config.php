@@ -44,8 +44,8 @@ return [
                         'fonts/*',
                     ],
                     'options' => [
-                        'disable_source_path' => true,
                         'move_raw' => true,
+                        'disable_source_path' => true,
                         'targetPath' => 'fonts',
                     ],
                 ],
@@ -57,6 +57,8 @@ return [
                     ],
                     'options' => [
                         'move_raw' => true,
+                        'disable_source_path' => true,
+                        'targetPath' => 'images',
                     ],
                 ],
             ],
