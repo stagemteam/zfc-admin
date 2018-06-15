@@ -43,6 +43,12 @@ $title = $this->sysConfig('design/general/system_name');
                         <?php endif; ?>
                         <!-- End logout -->
 
+	                    <!-- pool switcher -->
+                        <?php if ($this->resolver('pool::widget/switcher')) : ?>
+                            <?= $this->partial('pool::widget/switcher') ?>
+                        <?php endif; ?>
+	                    <!-- End pool switcher -->
+
                     </div>
                 </div>
             </header>
