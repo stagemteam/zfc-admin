@@ -243,10 +243,10 @@ table, .table, .table-striped{
 			&.ui-row-ltr{
 				td{
 					border-right: none;
-					height: 35px;
+					height: 28px;
 					font-size: 0.92em;
 					font-family: 'roboto_condensedregular';
-					padding-left: 15px;
+                    padding: 5px 8px 5px 15px;
 					text-align: left !important;
 					color: $tablTdColor;
 					vertical-align: middle;
