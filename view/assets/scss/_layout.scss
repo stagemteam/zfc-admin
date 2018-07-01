@@ -681,12 +681,16 @@ input.barcode-search{
 
 
 /*Dashboard*/
-.information-block {
+
+
+.block {
 	margin: 20px 0 40px 0;
 	//border: 1px solid #d2d2d2;
 	//padding: 20px;
 	//box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
-
+	.img-preloader {
+		display: none;
+	}
 	.title {
 		line-height: 40px;
 		h1, h2, h3, h4, h5, h6 {
@@ -764,6 +768,23 @@ input.barcode-search{
 	}
 	.block-info-white {
 		background: #fff;
+	}
+}
+
+.img-preloader {
+	display: none;
+}
+
+.preloader {
+	opacity: 0.6;
+	.img-preloader {
+		z-index: 1111;
+		position: relative;
+		bottom: 110px;
+		width: 50px;
+		margin: 0 auto;
+		height: auto;
+		display: block;
 	}
 }
 
