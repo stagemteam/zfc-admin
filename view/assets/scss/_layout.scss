@@ -683,9 +683,9 @@ input.barcode-search{
 /*Dashboard*/
 .information-block {
 	margin: 20px 0 40px 0;
-	border: 1px solid #d2d2d2;
-	padding: 20px;
-	box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
+	//border: 1px solid #d2d2d2;
+	//padding: 20px;
+	//box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
 
 	.title {
 		line-height: 40px;
@@ -693,6 +693,7 @@ input.barcode-search{
 			display: inline;
 		}
 		span {
+			font-size: 20px;
 			margin-right: 10px;
 		}
 	}
