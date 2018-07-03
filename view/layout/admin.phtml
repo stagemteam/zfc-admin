@@ -30,7 +30,7 @@ $title = $this->sysConfig('design/general/system_name');
             <header class="navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="row">
-                        <a class="navbar-brand text-center" href="#"><span><?= $title ?></span></a>
+                        <a class="navbar-brand text-center" href="<?= $this->url('admin/default', ['controller' => 'index']) ?>"><span><?= $title ?></span></a>
                         <div class="sidebar-toggle pull-left">
                             <span></span>
                             <span></span>
