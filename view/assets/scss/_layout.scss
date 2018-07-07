@@ -109,6 +109,8 @@ header{
 main{
 	padding-top: $headerHeight;
 		.sidebar{
+			overflow: scroll;
+			overflow-x: hidden;
 			width: $sidebarWidth;
 			background: $sidebarBg;
 			height: 100vh;
@@ -689,7 +691,7 @@ input.barcode-search{
 	//padding: 20px;
 	//box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
 	.img-preloader {
-		display: none;
+		display: block;
 	}
 	.title {
 		line-height: 40px;
@@ -772,19 +774,21 @@ input.barcode-search{
 }
 
 .img-preloader {
-	display: none;
+	z-index: 1111;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 50px;
+	height: auto;
+	display: block;
+	opacity: 0;
 }
 
 .preloader {
 	opacity: 0.6;
+	position: relative;
 	.img-preloader {
-		z-index: 1111;
-		position: relative;
-		bottom: 110px;
-		width: 50px;
-		margin: 0 auto;
-		height: auto;
-		display: block;
+		opacity: 1;
 	}
 }
 
