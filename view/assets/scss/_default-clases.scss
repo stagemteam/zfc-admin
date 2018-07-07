@@ -25,7 +25,7 @@
 h4{
   font-size: 1.15em;
   color: $titleColor;
-  font-family: 'roboto_condensedregular';
+  font-family: $generalFont;
 }
 
 
@@ -544,7 +544,7 @@ label{
         h6{
           color: $generalBlueTextColor;
           font-size: 1em;
-          font-family: 'roboto_condensedregular';
+          font-family: $generalFont;
           margin-top: 7px;
         }
         

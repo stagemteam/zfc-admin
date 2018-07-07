@@ -9,7 +9,7 @@
       & > a{
         background: $tabBg;
         color: $tabColor;
-        font-family: 'roboto_condensedregular';
+        font-family: $generalFont;
         border-color: $tabBorderColor;
         border-bottom-color: transparent;
         min-width: 80px;
