@@ -36,6 +36,7 @@ return [
                         'js/modal.js',
                         'js/refresh.js',
                         'js/ajax.js',
+                        'js/preloader.js',
                     ],
                 ],
 
