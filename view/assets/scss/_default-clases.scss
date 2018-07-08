@@ -303,7 +303,7 @@ fieldset{
   }
 }
 // input style
-.form-control, input[type="text"], input[type="date"], input[type="number"], input[type="password"], select, textarea{
+.form-control, input[type="text"], input[type="date"], input[type="number"], input[type="password"], input[type="checkbox"], input[type="radio"], select, textarea{
   border-radius: 0;
   border: 2px solid $inputBorderColor;
   // font-size: 1.4em;
