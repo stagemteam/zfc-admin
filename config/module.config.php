@@ -1,8 +1,27 @@
 <?php
+
 namespace Stagem\ZfcAdmin;
 
 return [
     'assetic_configuration' => require 'assets.config.php',
+
+    'event_manager' => require 'listener.config.php',
+
+    //'navigation' => require 'navigation.config.php',
+
+    'navigation' => [
+        'admin' => [
+            'home' => [
+                'label' => 'Home',
+                'title' => 'Go Home',
+                'module' => 'admin',
+                'controller' => 'index',
+                'action' => 'index',
+                'order' => -100, // make sure home is the first page
+                'pages' => [],
+            ],
+        ],
+    ],
 
     'actions' => [
         'admin' => __NAMESPACE__ . '\Action'
@@ -12,6 +31,25 @@ return [
     'controllers' => [
         'invokables' => [
             'index' => Controller\HomeController::class,
+        ],
+    ],
+
+    'dependencies' => [
+        'factories' => [
+            //'Navigation' => \Zend\Navigation\Service\DefaultNavigationFactory::class,
+        ],
+
+    ],
+
+    'view_helpers' => [
+        'delegators' => [
+            //\Zend\View\HelperPluginManager::class => [
+            'navigation' => [
+                View\Helper\Factory\NavigationHelperDelegatorFactory::class,
+            ],
+            \Zend\View\Helper\Navigation::class => [
+                View\Helper\Factory\NavigationHelperDelegatorFactory::class,
+            ],
         ],
     ],
 

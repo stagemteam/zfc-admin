@@ -56,10 +56,9 @@ $title = $this->sysConfig('general/info/system_name');
 
              <!-- MAIN START -->
             <main>
-
                 <!-- menu -->
-                <?php if ($this->resolver('widget::menu')) : ?>
-                    <?= $this->partial('widget::menu') ?>
+                <?php if ($this->resolver('admin::widget/menu')) : ?>
+                    <?= $this->partial('admin::widget/menu') ?>
                 <?php endif; ?>
                 <!-- End menu -->
 
@@ -70,8 +69,8 @@ $title = $this->sysConfig('general/info/system_name');
 
                                 <div class="col-lg-8">
                                     <!-- breadcrumb -->
-                                    <?php if ($this->resolver('admin/breadcrumb')) : ?>
-                                        <?= $this->partial('admin/breadcrumb'); ?>
+                                    <?php if ($this->resolver('admin::widget/breadcrumb')) : ?>
+                                        <?= $this->partial('admin::widget/breadcrumb'); ?>
                                     <?php endif; ?>
                                     <!-- End breadcrumb -->
                                 </div>
